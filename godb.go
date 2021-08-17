@@ -1,9 +1,4 @@
-package main // godb
-
-import (
-	"fmt"
-	"reflect"
-)
+package godb
 
 type DataType int
 
@@ -36,34 +31,34 @@ type DB struct {
 	Categories map[string]map[uint8]string
 }
 
-func (db *DB) createHeader() []byte {
-	return make([]byte, 0)
-}
+// func (db *DB) createHeader() []byte {
+// 	return make([]byte, 0)
+// }
 
-func (db *DB) loadHeader() error {
-	return nil
-}
+// func (db *DB) loadHeader() error {
+// 	return nil
+// }
 
 /*
  *
  *
  */
-func NewDB(filename string, row interface{}) (*DB, error) {
+func NewDB(filename string, rowType interface{}) (*DB, error) {
 	return &DB{Filename: filename}, nil
 }
 
-func getColsFromStruct(t interface{}) ([]Column, error) {
-	return nil, nil
-}
+// func getColsFromStruct(t interface{}) ([]Column, error) {
+// 	return nil, nil
+// }
 
-func main() {
-	r := Row{}
-	rt := reflect.TypeOf(r)
-	for i := 0; i < rt.NumField(); i++ {
-		f := rt.Field(i)
-		fmt.Println(f.Name)
-		for k, v := range f.Tag {
-			fmt.Printf("    %s = %s\n", string(k), v)
-		}
-	}
-}
+// func main() {
+// 	r := Row{}
+// 	rt := reflect.TypeOf(r)
+// 	for i := 0; i < rt.NumField(); i++ {
+// 		f := rt.Field(i)
+// 		fmt.Println(f.Name)
+// 		for k, v := range f.Tag {
+// 			fmt.Printf("    %s = %s\n", string(k), v)
+// 		}
+// 	}
+// }

@@ -1,4 +1,4 @@
-package main_test // godb_test
+package godb_test
 
 import "testing"
 
